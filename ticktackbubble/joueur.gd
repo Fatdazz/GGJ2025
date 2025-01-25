@@ -16,19 +16,31 @@ func change_vitesse(i):
 func _physics_process(delta: float) -> void:
 
 	velocity = JUMP_VELOCITY
+	var vec = Vector2(0.,0.)
 	# Handle jump.
 	if Input.is_action_pressed("1_right"):
-		blow(1)
+		vec.x += 1.
+		vec.y += 1.
+		#blow(1)
 	if Input.is_action_pressed("1_left"):
-		blow(-1)
+		vec.x += -1.
+		vec.y += 1.
+		#blow(-1)
 	if Input.is_action_pressed("2_right"):
-		blow(2)
+		vec.x += 2.
+		vec.y += 2.
 	if Input.is_action_pressed("2_left"):
-		blow(-2)
+		vec.x += -2.
+		vec.y += 2.
 	if Input.is_action_pressed("3_right"):
-		blow(3)
+		vec.x += 3.
+		vec.y += 3.
 	if Input.is_action_pressed("3_left"):
-		blow(-3)
+		vec.x += -3.
+		vec.y += 3.
+	
+	bubble.velocity.x = vec.x * -VENTILO_VELOCITY
+	bubble.velocity.y = vec.y * (-VENTILO_VELOCITY + velocity)
 	if not bubble.is_on_floor():
 		bubble.velocity += bubble.get_gravity() * delta
 	bubble.move_and_slide()
