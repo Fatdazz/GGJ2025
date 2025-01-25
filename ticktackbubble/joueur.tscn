@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpjo3l3b4sal0"]
+
+[ext_resource type="Script" path="res://joueur.gd" id="1_ovbos"]
+[ext_resource type="Texture2D" uid="uid://b1g4ph6gg5h3y" path="res://asset/Nouvelle Bubbles brouillon 2.png" id="2_636fq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yykrm"]
+radius = 6.72055
+
+[node name="Joueur" type="Node2D"]
+position = Vector2(4, 79)
+scale = Vector2(0.297595, 0.30206)
+script = ExtResource("1_ovbos")
+
+[node name="Ventilateur" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ventilateur"]
+
+[node name="Bubble" type="CharacterBody2D" parent="."]
+position = Vector2(3.36029, 39.7272)
+scale = Vector2(20, 20)
+floor_constant_speed = true
+
+[node name="Collision" type="CollisionShape2D" parent="Bubble"]
+position = Vector2(-2.08082, -0.310596)
+shape = SubResource("CircleShape2D_yykrm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bubble"]
+position = Vector2(-2.18418, -0.49659)
+scale = Vector2(0.0235168, 0.0235168)
+texture = ExtResource("2_636fq")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Bubble"]
+position = Vector2(-0.168015, -1.98636)
+scale = Vector2(0.05, 0.05)
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-10.0808, -993.18)
+scale = Vector2(1, 1)
+drag_vertical_enabled = true
+drag_top_margin = 0.68
+drag_bottom_margin = 0.62
