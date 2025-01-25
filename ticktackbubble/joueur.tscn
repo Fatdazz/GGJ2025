@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpjo3l3b4sal0"]
+[gd_scene load_steps=4 format=3 uid="uid://caw648pewoddo"]
 
 [ext_resource type="Script" path="res://joueur.gd" id="1_ovbos"]
 [ext_resource type="Texture2D" uid="uid://dt87fjtvwoqhk" path="res://asset/Bulle.png" id="2_geou4"]
