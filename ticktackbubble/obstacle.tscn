@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://7u5hjw1au25d"]
 
+[ext_resource type="Texture2D" uid="uid://ctpy3gp86fci3" path="res://asset/bouh_content.png" id="1_0o56x"]
 [ext_resource type="Script" path="res://obstacle.gd" id="1_3i4j1"]
-[ext_resource type="Texture2D" uid="uid://b1g4ph6gg5h3y" path="res://asset/obstacle.png" id="2_wicaq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vnfb2"]
 
@@ -15,8 +15,8 @@ constant_angular_velocity = 0.00445059
 script = ExtResource("1_3i4j1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.120001, 0.120001)
-texture = ExtResource("2_wicaq")
+scale = Vector2(0.0727029, -0.0598029)
+texture = ExtResource("1_0o56x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w3mhk")
