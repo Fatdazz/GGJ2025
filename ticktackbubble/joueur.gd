@@ -3,8 +3,9 @@ extends Node2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -200.0
-var VENTILO_VELOCITY = 50.
-const VITESSES = [1., 2., 3.]
+@export var VENTILO_VELOCITY = 50.
+
+@export var VITESSES = [1., 2., 3.]
 
 @onready var bubble = $Bubble
 
