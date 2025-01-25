@@ -21,6 +21,10 @@ window/size/viewport_width=340
 window/size/viewport_height=800
 window/handheld/orientation=1
 
+[global_group]
+
+obstacles=""
+
 [input]
 
 1_right={
