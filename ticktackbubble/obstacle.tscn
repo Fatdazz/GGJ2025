@@ -9,9 +9,9 @@ radius = 35.5106
 [node name="Obstacle" type="Area2D" groups=["obstacles"]]
 script = ExtResource("1_3i4j1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_w3mhk")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.120001, 0.120001)
 texture = ExtResource("2_wicaq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w3mhk")

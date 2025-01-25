@@ -41,8 +41,7 @@ func _physics_process(delta: float) -> void:
 func blow(i):
 	bubble.velocity.x = i * -VENTILO_VELOCITY
 	bubble.velocity.y = -VENTILO_VELOCITY + JUMP_VELOCITY
-
-
-func _on_area_entered(area):
+	
+func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("obstacles"):
 		hurt.emit()
