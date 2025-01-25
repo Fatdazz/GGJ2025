@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bidkpi06y853c"]
+[gd_scene load_steps=9 format=3 uid="uid://bidkpi06y853c"]
 
 [ext_resource type="Texture2D" uid="uid://h2jpyv583k7e" path="res://asset/background.png" id="1_xs0tg"]
 [ext_resource type="PackedScene" uid="uid://7u5hjw1au25d" path="res://obstacle.tscn" id="2_p1d5h"]
 [ext_resource type="Texture2D" uid="uid://i7q8ax2fkwq7" path="res://asset/Bas_pendule.png" id="3_ot51l"]
+[ext_resource type="Texture2D" uid="uid://dequcb8xl7dw6" path="res://asset/Haut_pendule.png" id="3_pjuei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtde0"]
 size = Vector2(426, 23)
@@ -12,6 +13,9 @@ size = Vector2(49, 802)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2bak"]
 size = Vector2(43, 799.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sei17"]
+size = Vector2(435.168, 30.953)
 
 [node name="Level" type="Node2D"]
 position = Vector2(10, -4)
@@ -44,6 +48,16 @@ shape = SubResource("RectangleShape2D_h2bak")
 position = Vector2(-19.0343, 185.318)
 scale = Vector2(1.18964, 0.465623)
 texture = ExtResource("3_ot51l")
+
+[node name="HautPendule" type="Sprite2D" parent="Walls"]
+position = Vector2(-27.3618, -637.903)
+scale = Vector2(1.28482, 0.502872)
+texture = ExtResource("3_pjuei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-28.5515, -627.659)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_sei17")
 
 [node name="Obstacles" type="Node2D" parent="."]
 

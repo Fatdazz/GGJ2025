@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var JUMP_VELOCITY = -25.
+@export var JUMP_VELOCITY = -50.
 @export var VENTILO_VELOCITY = 10.
 @export var VITESSES = [1., 2., 3.]
 
