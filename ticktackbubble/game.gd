@@ -10,5 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_joueur_hurt():
-	print("aïe")
+func _on_joueur_hurt(i:int):
+	print(i, " : aïe")

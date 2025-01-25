@@ -9,11 +9,11 @@ signal hurt
 #TODO : diminuer la force avec la distance aux ventilo
 
 func change_vitesse(i):
-	VENTILO_VELOCITY = 50. * VITESSES[i]
+	JUMP_VELOCITY = -200. * VITESSES[i]
 		
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	
+
+	var vec = Vector2(0,0)
 	# Handle jump.
 	if Input.is_action_pressed("1_right"):
 		change_vitesse(0)
@@ -35,7 +35,6 @@ func _physics_process(delta: float) -> void:
 		blow(-1)
 	if not bubble.is_on_floor():
 		bubble.velocity += bubble.get_gravity() * delta
-
 	bubble.move_and_slide()
 
 func blow(i):
@@ -44,4 +43,8 @@ func blow(i):
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("obstacles"):
-		hurt.emit()
+		hurt.emit(0)
+		
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("obstacles"):
+		hurt.emit(1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bidkpi06y853c"]
+[gd_scene load_steps=7 format=3 uid="uid://bidkpi06y853c"]
 
 [ext_resource type="Texture2D" uid="uid://h2jpyv583k7e" path="res://asset/background.png" id="1_xs0tg"]
 [ext_resource type="PackedScene" uid="uid://7u5hjw1au25d" path="res://obstacle.tscn" id="2_p1d5h"]
@@ -11,6 +11,8 @@ size = Vector2(49, 802)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2bak"]
 size = Vector2(43, 799.25)
+
+[sub_resource type="TileSet" id="TileSet_ww245"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(10, -4)
@@ -42,3 +44,6 @@ shape = SubResource("RectangleShape2D_h2bak")
 [node name="Obstacles" type="Node2D" parent="."]
 
 [node name="Obstacle" parent="Obstacles" instance=ExtResource("2_p1d5h")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_ww245")

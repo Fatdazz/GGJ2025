@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 @export var VITESSE_ROTATION = 0.
 @export var POWER = 0.

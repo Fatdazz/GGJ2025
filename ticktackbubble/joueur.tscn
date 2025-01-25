@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dt87fjtvwoqhk" path="res://asset/Bulle.png" id="2_geou4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yykrm"]
-radius = 6.72055
+radius = 79.039
 
 [node name="Joueur" type="Node2D"]
 position = Vector2(4, 79)
@@ -16,11 +16,9 @@ script = ExtResource("1_ovbos")
 [node name="Sprite2D" type="Sprite2D" parent="Ventilateur"]
 
 [node name="Bubble" type="CharacterBody2D" parent="."]
-scale = Vector2(10, 10)
-floor_constant_speed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Bubble"]
-scale = Vector2(0.348915, 0.348915)
+scale = Vector2(4.043, 4)
 texture = ExtResource("2_geou4")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Bubble"]
@@ -36,9 +34,10 @@ shape = SubResource("CircleShape2D_yykrm")
 shape = SubResource("CircleShape2D_yykrm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.05, 0.05)
 drag_vertical_enabled = true
 drag_top_margin = 0.68
 drag_bottom_margin = 0.62
 
 [connection signal="area_entered" from="Bubble/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Bubble/Area2D" to="." method="_on_area_2d_body_entered"]

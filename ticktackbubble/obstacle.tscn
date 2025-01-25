@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://7u5hjw1au25d"]
+[gd_scene load_steps=5 format=3 uid="uid://7u5hjw1au25d"]
 
 [ext_resource type="Script" path="res://obstacle.gd" id="1_3i4j1"]
 [ext_resource type="Texture2D" uid="uid://b1g4ph6gg5h3y" path="res://asset/obstacle.png" id="2_wicaq"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vnfb2"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_w3mhk"]
 radius = 35.5106
 
-[node name="Obstacle" type="Area2D" groups=["obstacles"]]
+[node name="Obstacle" type="StaticBody2D" groups=["obstacles"]]
+physics_material_override = SubResource("PhysicsMaterial_vnfb2")
+constant_linear_velocity = Vector2(0.315, 0.255)
+constant_angular_velocity = 0.00445059
 script = ExtResource("1_3i4j1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
