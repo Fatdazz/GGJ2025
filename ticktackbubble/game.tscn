@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://dg5ucdtr76cby"]
+
+[ext_resource type="Texture2D" uid="uid://h2jpyv583k7e" path="res://asset/background.png" id="1_p3df5"]
+[ext_resource type="Script" path="res://joueur.gd" id="2_3x3mc"]
+[ext_resource type="Texture2D" uid="uid://ctpy3gp86fci3" path="res://asset/bouh_content.png" id="2_cpgsc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtde0"]
+size = Vector2(426, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5gor"]
+size = Vector2(49, 802)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2bak"]
+size = Vector2(43, 799.25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yykrm"]
+radius = 6.72055
+
+[sub_resource type="SphereMesh" id="SphereMesh_ua7e0"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Level" type="Node2D" parent="."]
+position = Vector2(10, -4)
+
+[node name="Background" type="TextureRect" parent="Level"]
+visible = false
+offset_left = -311.0
+offset_top = -4062.0
+offset_right = 289.0
+offset_bottom = 438.0
+texture = ExtResource("1_p3df5")
+
+[node name="Walls" type="StaticBody2D" parent="Level"]
+position = Vector2(5, 63)
+
+[node name="Floor" type="CollisionShape2D" parent="Level/Walls"]
+position = Vector2(-26, 173)
+shape = SubResource("RectangleShape2D_rtde0")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Level/Walls"]
+position = Vector2(-220, -237)
+shape = SubResource("RectangleShape2D_t5gor")
+
+[node name="RightWall" type="CollisionShape2D" parent="Level/Walls"]
+position = Vector2(168, -242.375)
+shape = SubResource("RectangleShape2D_h2bak")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-11, -158)
+scale = Vector2(2.26285, -1.25619)
+
+[node name="Joueur" type="Node2D" parent="."]
+position = Vector2(4, 79)
+scale = Vector2(0.297595, 0.30206)
+script = ExtResource("2_3x3mc")
+
+[node name="Ventilateur" type="Node2D" parent="Joueur"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Joueur/Ventilateur"]
+
+[node name="Bubble" type="CharacterBody2D" parent="Joueur"]
+position = Vector2(3.36029, 39.7272)
+scale = Vector2(20, 20)
+motion_mode = 1
+
+[node name="Collision" type="CollisionShape2D" parent="Joueur/Bubble"]
+position = Vector2(-2.08082, -0.310596)
+shape = SubResource("CircleShape2D_yykrm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Joueur/Bubble"]
+visible = false
+scale = Vector2(0.14, 0.124)
+texture = ExtResource("2_cpgsc")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Joueur/Bubble"]
+position = Vector2(-2.08082, -0.310596)
+scale = Vector2(15, 15)
+mesh = SubResource("SphereMesh_ua7e0")
+texture = ExtResource("2_cpgsc")
