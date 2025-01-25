@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1g4ph6gg5h3y"
-path="res://.godot/imported/Nouvelle Bubbles brouillon 2.png-fbd04ea0337ad9471cba6dbbfa248139.ctex"
+uid="uid://rkq6snd7kor1"
+path="res://.godot/imported/Camera.png-e2c3c6147375f83ab78ae7a2001c42fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Nouvelle Bubbles brouillon 2.png"
-dest_files=["res://.godot/imported/Nouvelle Bubbles brouillon 2.png-fbd04ea0337ad9471cba6dbbfa248139.ctex"]
+source_file="res://asset/Camera.png"
+dest_files=["res://.godot/imported/Camera.png-e2c3c6147375f83ab78ae7a2001c42fb.ctex"]
 
 [params]
 
