@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://4px73fe0b7vn"]
+
+[ext_resource type="PackedScene" uid="uid://2k32v2x80b28" path="res://level.tscn" id="1_ixgee"]
+[ext_resource type="PackedScene" uid="uid://caw648pewoddo" path="res://joueur.tscn" id="2_8reqi"]
+
+[node name="LVL_1" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource("1_ixgee")]
+position = Vector2(16, -8)
+
+[node name="Joueur" parent="." instance=ExtResource("2_8reqi")]
+position = Vector2(-3.8147e-06, 288)
+
+[editable path="Level"]
