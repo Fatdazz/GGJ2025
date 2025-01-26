@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dg5ucdtr76cby"]
 
-[ext_resource type="PackedScene" uid="uid://2k32v2x80b28" path="res://level.tscn" id="1_7i7st"]
+[ext_resource type="PackedScene" uid="uid://bidkpi06y853c" path="res://level.tscn" id="1_7i7st"]
 [ext_resource type="Script" path="res://game.gd" id="1_hnob0"]
-[ext_resource type="PackedScene" uid="uid://caw648pewoddo" path="res://joueur.tscn" id="2_a4ye8"]
+[ext_resource type="PackedScene" uid="uid://bpjo3l3b4sal0" path="res://joueur.tscn" id="2_a4ye8"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_hnob0")
@@ -34,7 +34,7 @@ JUMP_VELOCITY = -25.0
 VITESSES = [1.0, 1.7, 3.2]
 
 [node name="Bubble" parent="Joueur" index="1"]
-position = Vector2(4, 161)
+position = Vector2(-6, -115)
 scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" parent="Joueur/Bubble" index="0"]

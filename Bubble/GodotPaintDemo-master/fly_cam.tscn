@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgexjavdrwibo"]
+
+[ext_resource type="Script" path="res://GodotPaintDemo-master/fly_cam.gd" id="1"]
+
+[node name="fly_cam" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.722072)
+script = ExtResource("1")
+
+[node name="gimbal" type="Node3D" parent="."]
+
+[node name="innergimal" type="Node3D" parent="gimbal"]
+
+[node name="cam" type="Camera3D" parent="gimbal/innergimal"]
+current = true
+fov = 60.0
+near = 0.1
+far = 100.0
