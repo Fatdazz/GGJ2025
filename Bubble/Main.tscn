@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://yh258i6raou6"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_d8for"]
+[ext_resource type="Shader" path="res://Main.gdshader" id="1_iyrn1"]
+[ext_resource type="PackedScene" uid="uid://u572xd7q6i8o" path="res://bullet.tscn" id="2_lgxjv"]
+[ext_resource type="Shader" path="res://object.gdshader" id="2_nbrta"]
+[ext_resource type="Script" path="res://player.gd" id="4_nsrsq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vsgv"]
+render_priority = 0
+shader = ExtResource("1_iyrn1")
+shader_parameter/width = 0.1
+shader_parameter/height = 0.1
+shader_parameter/gap_x = 0.02
+shader_parameter/gap_y = 0.04
+shader_parameter/sink = -0.5
+shader_parameter/ratio = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_omfe6"]
+render_priority = 0
+shader = ExtResource("2_nbrta")
+shader_parameter/fresnel_power = 3.0
+shader_parameter/interference_frequency = 3.0
+shader_parameter/base = Color(1, 0.8, 0.6, 1)
+shader_parameter/shift = Color(0.2, 0.7, 1, 1)
+shader_parameter/roughness = 0.3
+shader_parameter/metallic = 0.7
+shader_parameter/light_direction = Vector3(0, -1, 0)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qejbn"]
+
+[node name="Room" type="Node3D"]
+script = ExtResource("1_d8for")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.249037, 0.0344429, 1.58716)
+
+[node name="walls" type="CSGBox3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+flip_faces = true
+material = SubResource("ShaderMaterial_3vsgv")
+
+[node name="ball" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.215525, 0.0803311, 0)
+material_override = SubResource("ShaderMaterial_omfe6")
+use_collision = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ball"]
+transform = Transform3D(1, 0, 0, 0, 0.654107, 0.756402, 0, -0.756402, 0.654107, -0.0245739, 0.019375, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ball/StaticBody3D"]
+shape = SubResource("SphereShape3D_qejbn")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.038475, 0.99926, 0, -0.99926, 0.038475, -0.0219522, 0.992544, 0.831932)
+
+[node name="player" type="Node3D" parent="."]
+script = ExtResource("4_nsrsq")
+Bullet = ExtResource("2_lgxjv")
