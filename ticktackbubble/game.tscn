@@ -13,9 +13,19 @@ position = Vector2(0, 0)
 [node name="Walls" parent="Level" index="1"]
 scale = Vector2(1, 1)
 
-[node name="BasPendule" parent="Level/Walls" index="3"]
+[node name="BasPendule" parent="Level/Walls" index="1"]
 position = Vector2(0, 185.318)
 scale = Vector2(1, 1)
+
+[node name="HautPendule" parent="Level/Walls" index="2"]
+position = Vector2(-27.3618, -637.903)
+scale = Vector2(1.28482, 0.502872)
+
+[node name="LeftWall" parent="Level/Walls" index="5"]
+position = Vector2(-220, -237)
+
+[node name="CollisionShape2D" parent="Level/Walls" index="7"]
+position = Vector2(-28.5515, -627.659)
 
 [node name="Joueur" parent="." instance=ExtResource("2_a4ye8")]
 position = Vector2(0, 0)
@@ -24,11 +34,16 @@ JUMP_VELOCITY = -25.0
 VITESSES = [1.0, 1.7, 3.2]
 
 [node name="Bubble" parent="Joueur" index="1"]
-position = Vector2(1, 258)
+position = Vector2(4, 161)
 scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" parent="Joueur/Bubble" index="0"]
+scale = Vector2(4, 4)
 
 [node name="RemoteTransform2D" parent="Joueur/Bubble" index="1"]
 visible = false
+update_rotation = false
+update_scale = false
 
 [node name="Area2D" parent="Joueur/Bubble" index="3"]
 visible = false
@@ -40,9 +55,11 @@ visible = false
 visible = false
 
 [node name="Camera2D" parent="Joueur" index="2"]
-position = Vector2(1, 258)
-scale = Vector2(0.015, 0.015)
+limit_left = 0
+limit_right = 0
 drag_horizontal_enabled = false
+drag_vertical_offset = -1.0
+drag_bottom_margin = 0.0
 
 [connection signal="hurt" from="Joueur" to="." method="_on_joueur_hurt"]
 

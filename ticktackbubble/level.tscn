@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bidkpi06y853c"]
+[gd_scene load_steps=10 format=3 uid="uid://2k32v2x80b28"]
 
 [ext_resource type="Texture2D" uid="uid://h2jpyv583k7e" path="res://asset/background.png" id="1_xs0tg"]
 [ext_resource type="PackedScene" uid="uid://7u5hjw1au25d" path="res://obstacle.tscn" id="2_p1d5h"]
@@ -65,17 +65,14 @@ stretch_mode = 1
 
 [node name="LeftWall" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-204.619, -238.399)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t5gor")
 
 [node name="RightWall" type="CollisionShape2D" parent="Walls"]
 position = Vector2(168, -242.375)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_h2bak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-24.9825, -626.728)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sei17")
 
 [node name="Obstacles" type="Node2D" parent="."]
